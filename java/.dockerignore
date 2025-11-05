@@ -1,0 +1,11 @@
+target/
+*.class
+*.log
+*.jar
+*.war
+*.ear
+.mvn/wrapper/maven-wrapper.jar
+.git
+.gitignore
+README.md
+k8s/

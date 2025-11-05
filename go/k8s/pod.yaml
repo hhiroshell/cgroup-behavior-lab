@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-resource-monitor
+  labels:
+    app: resource-monitor
+    language: go
+spec:
+  containers:
+  - name: resource-monitor
+    image: go-resource-monitor:latest
+    imagePullPolicy: IfNotPresent
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    env:
+    - name: GOMAXPROCS
+      value: "0"
+    - name: GOGC
+      value: "100"
+  restartPolicy: Never
